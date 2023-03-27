@@ -1,0 +1,103 @@
+{
+    "TableName": "Music",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "Artist",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "SongTitle",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "AlbumTitle",
+            "AttributeType": "S"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "Artist",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "SongTitle",
+            "KeyType": "RANGE"
+        }
+    ],
+    "GlobalSecondaryIndexUpdates":[
+        {
+            "Create" :
+            {
+                "IndexName" : "AlbumTitle-index",
+                "KeySchema" : [
+                    {
+                        "AttributeName": "AlbumTitle",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 10,
+                    "WriteCapacityUnits": 5
+                },
+                 "Projection": {
+                     "ProjectionType": "ALL"
+                 }
+            }
+        },
+        {
+            "Create":
+            {
+                "IndexName": "ArtistAlbumTitle-index",
+                "KeySchema":
+                [
+                    {
+                        "AttributeName":"Artist",
+                        "KeyType":"HASH"
+                    },
+                    {
+                        "AttributeName":"AlbumTitle",
+                        "KeyType":"RANGE"
+                    }
+                ],
+                "ProvisionedThroughput":
+             {
+                "ReadCapacityUnits": 10,
+                "WriteCapacityUnits": 5
+             },
+                "Projection":
+                {
+                    "ProjectionType":"ALL"
+                }
+            }
+        },
+        {
+            "Create":
+            {
+                "IndexName": "SongTitleYear-index",
+                "KeySchema":[
+                    {
+                        "AttributeName":"SongTitle",
+                        "KeyType":"HASH"
+                    },
+                    {
+                        "AttributeName":"SongYear",
+                        "KeyType":"RANGE"
+                    }
+                ],
+        "ProvisionedThroughput":
+        {
+            "ReadCapacityUnits": 10,
+            "WriteCapacityUnits": 5
+        },
+                "Projection":
+                {
+                    "ProjectionType":"ALL"
+                }
+            }
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 10,
+        "WriteCapacityUnits": 5
+    }
+}

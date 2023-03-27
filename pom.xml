@@ -5,17 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.2.RELEASE</version>
+		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kaikeventura</groupId>
+	<groupId>com.claudioneves</groupId>
 	<artifactId>dynamodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dynamodb</name>
-	<description>REST API Java Spring Boot and DynamoDB</description>
+	<description>REST API Java Spring Boot and DynamoDB</description>
 
 	<properties>
-		<java.version>14</java.version>
+		<java.version>11</java.version>
+		<java.target>11</java.target>
 	</properties>
 
 	<dependencies>
@@ -39,18 +40,32 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-dynamodb</artifactId>
-			<version>1.11.831</version>
+			<version>1.11.443</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
-
+<!-- Spring data verificar -->
 		<dependency>
-			<groupId>com.github.derjust</groupId>
+			<groupId>io.github.boostchicken</groupId>
 			<artifactId>spring-data-dynamodb</artifactId>
-			<version>5.1.0</version>
+			<version>5.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.15</version>
+		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.5.20</version>
 		</dependency>
 	</dependencies>
 

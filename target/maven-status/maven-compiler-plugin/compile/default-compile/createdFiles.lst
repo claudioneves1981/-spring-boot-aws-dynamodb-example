@@ -1,0 +1,15 @@
+com/claudioneves/dynamodb/dto/MusicDTO.class
+com/claudioneves/dynamodb/model/MusicId$MusicIdBuilder.class
+com/claudioneves/dynamodb/dto/MusicIdDTO.class
+com/claudioneves/dynamodb/model/Music.class
+com/claudioneves/dynamodb/controller/impl/AppControllerImpl.class
+com/claudioneves/dynamodb/dto/MusicDTO$MusicDTOBuilder.class
+com/claudioneves/dynamodb/repository/MusicRepository.class
+com/claudioneves/dynamodb/DynamodbApplication.class
+com/claudioneves/dynamodb/controller/AppController.class
+com/claudioneves/dynamodb/service/MusicService.class
+com/claudioneves/dynamodb/model/Music$MusicBuilder.class
+com/claudioneves/dynamodb/config/DynamoDBConfig.class
+com/claudioneves/dynamodb/adapter/MusicDTOAdapter.class
+com/claudioneves/dynamodb/model/MusicId.class
+com/claudioneves/dynamodb/service/impl/MusicServiceImpl.class

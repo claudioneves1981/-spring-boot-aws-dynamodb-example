@@ -1,0 +1,12 @@
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/service/impl/MusicServiceImpl.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/DynamodbApplication.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/controller/impl/AppControllerImpl.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/adapter/MusicDTOAdapter.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/dto/MusicIdDTO.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/controller/AppController.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/repository/MusicRepository.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/service/MusicService.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/dto/MusicDTO.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/config/DynamoDBConfig.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/model/MusicId.java
+/home/claudioneves/spring-boot-aws-dynamodb-example/src/main/java/com/claudioneves/dynamodb/model/Music.java
