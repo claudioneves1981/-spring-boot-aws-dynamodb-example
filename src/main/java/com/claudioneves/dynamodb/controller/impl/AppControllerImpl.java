@@ -3,11 +3,10 @@ package com.claudioneves.dynamodb.controller.impl;
 import com.claudioneves.dynamodb.controller.AppController;
 import com.claudioneves.dynamodb.dto.MusicDTO;
 import com.claudioneves.dynamodb.model.Music;
-import com.claudioneves.dynamodb.model.MusicId;
 import com.claudioneves.dynamodb.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +27,12 @@ public class AppControllerImpl implements AppController {
     public AppControllerImpl(){
 
 
+    }
+
+    @PostMapping("Music/save")
+    @Override
+    public ResponseEntity<Music> newMusic(@Valid @RequestBody MusicDTO musicDTO) {
+        return new ResponseEntity<>(musicService.saveMusic(musicDTO), HttpStatus.OK);
     }
 
 

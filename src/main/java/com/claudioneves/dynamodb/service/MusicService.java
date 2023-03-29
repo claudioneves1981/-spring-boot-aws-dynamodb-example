@@ -5,6 +5,7 @@ import com.claudioneves.dynamodb.model.Music;
 import com.claudioneves.dynamodb.model.MusicId;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MusicService {
     List<Music> findAllMusics();
@@ -13,11 +14,5 @@ public interface MusicService {
     List<Music> findByArtistSongTitle(String artist, String songTitle);
     List<Music> findByArtistAlbumTitle(String artist, String albumTitle);
     List<Music> findBySongTitleYear(String songTitle, String year);
-    List<Music> findBySongTitle(String songTitle);
-
-
-
-
-
-
+    Music saveMusic(MusicDTO musicDTO);
 }

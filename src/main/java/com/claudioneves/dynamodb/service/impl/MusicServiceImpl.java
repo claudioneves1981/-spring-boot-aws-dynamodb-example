@@ -12,6 +12,7 @@ import com.claudioneves.dynamodb.adapter.MusicDTOAdapter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class MusicServiceImpl implements MusicService  {
@@ -60,7 +61,6 @@ public class MusicServiceImpl implements MusicService  {
         }
 
         return resultado;
-       // return musicRepository.findAllById(artist);
     }
 
     @Override
@@ -107,16 +107,11 @@ public class MusicServiceImpl implements MusicService  {
     }
 
     @Override
-    public List<Music> findBySongTitle(String songTitle) {
-        List<Music> temp = (List<Music>) musicRepository.findAll();
-        List<Music> resultado = new ArrayList<>();
-        for (Music music : temp) {
-            if (Objects.equals(music.getMusicId().getSongTitle(), songTitle)) {
-                resultado.add(music);
-            }
+    public Music saveMusic(MusicDTO musicDTO) {
+        if(musicRepository.findById(new MusicDTOAdapter(musicDTO).getMusic().getMusicId()).isPresent()) {
+            throw new RuntimeException("There is already a customer with this document number");
         }
-
-        return resultado;
+        return musicRepository.save(new MusicDTOAdapter(musicDTO).getMusic());
     }
 
 

@@ -14,6 +14,13 @@ import java.util.List;
 @Api(value = "Manage Music Albuns")
     public interface AppController {
 
+        @ApiOperation(value = "find all musics")
+        @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Sucess find all musics"),
+            @ApiResponse(code = 400, message = "Missing required fields or wrong field range value.")
+        })
+        ResponseEntity<Music> newMusic(MusicDTO musicDTO);
+
         @ApiOperation(value = "find music by album title")
         @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Success find music"),

@@ -1,5 +1,6 @@
 package com.claudioneves.dynamodb.dto;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.claudioneves.dynamodb.model.MusicId;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,7 +27,7 @@ public class MusicDTO implements Serializable {
     @NotBlank
     private String songYear;
 
-    @JsonProperty("Artist")
+    @JsonProperty("SongTitle")
     @NotNull
     @NotBlank
     public String getArtist() {
@@ -40,7 +41,7 @@ public class MusicDTO implements Serializable {
         musicIdDTO.setArtist(artist);
     }
 
-    @JsonProperty("SongTitle")
+    @JsonProperty("Artist")
     @NotNull
     @NotBlank
     public String getSongTitle() {
@@ -68,14 +69,6 @@ public class MusicDTO implements Serializable {
 
     public void setSongYear(String songYear) {
         this.songYear = songYear;
-    }
-
-    public MusicIdDTO getMusicIdDTO() {
-        return musicIdDTO;
-    }
-
-    public void setMusicIdDTO(MusicIdDTO musicIdDTO) {
-        this.musicIdDTO = musicIdDTO;
     }
 
 }

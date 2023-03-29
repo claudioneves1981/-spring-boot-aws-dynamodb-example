@@ -13,15 +13,15 @@ public class MusicDTOAdapter {
 
     public MusicDTOAdapter(MusicDTO musicDTO){
 
-        toModel(musicDTO);
+         music = toModel(musicDTO);
     }
 
     public Music toModel(MusicDTO musicDTO){
 
       return Music.builder()
               .musicId(MusicId.builder()
-                      .artist(musicDTO.getMusicIdDTO().getArtist())
-                      .songTitle(musicDTO.getMusicIdDTO().getSongTitle())
+                      .artist(musicDTO.getArtist())
+                      .songTitle(musicDTO.getSongTitle())
                       .build())
               .albumTitle(musicDTO.getAlbumTitle())
               .songYear(musicDTO.getSongYear())
